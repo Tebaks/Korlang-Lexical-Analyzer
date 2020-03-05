@@ -7,8 +7,12 @@ korlang: korlang.l
 clean:
 	rm korlang lex.yy.c
 
-test: variable_test
+test: variable_test logical_operations_test
 	
 variable_test:
 	echo "\nVariable Tests"
 	cat test/variables.kor | ./build/korlang
+	
+logical_operations_test:
+	echo "\nLogical Operations Test"
+	cat test/logics.kor | ./build/korlang
