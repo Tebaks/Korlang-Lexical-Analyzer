@@ -12,5 +12,8 @@ test <= test;
 
 test == test;
 
+test != test;
+
+if(test == test);
 
 

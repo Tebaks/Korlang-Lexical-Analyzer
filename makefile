@@ -1,6 +1,6 @@
-default:  korlang test
+korlang:  build test
 
-korlang: korlang.l
+build: korlang.l
 	lex korlang.l
 	gcc -o build/korlang lex.yy.c -ll
 

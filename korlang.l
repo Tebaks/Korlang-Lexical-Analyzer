@@ -16,17 +16,20 @@ LTH <
 GTHEQ >=
 LTHEQ <=
 EQUALS ==
+NEQUALS !=
 IF if
 ELSE else
-SOP \+
+SOP \(
 EOP \)
+
+
 
 /*IGNORED*/
 IGNORED [ \n\r]+
 %%
+
 {SEMICOLON} { printf("SEMICOLON "); }
 {TYPE} { printf("TYPE{%s} ", yytext ); }
-
 {FLOAT} { printf("FLOAT{%s} ", yytext ); }
 {INT} { printf("INT{%s} ", yytext ); }
 {BOOLEAN} { printf("BOOLEAN{%s} ", yytext ); }
@@ -39,10 +42,13 @@ IGNORED [ \n\r]+
 {GTHEQ} {printf("GREATER-OR-EQUAL-THAN ");}
 {LTHEQ} {printf("LESS-OR-EQUAL-THAN ");}
 {EQUALS} {printf("EQUAL ");}
+{NEQUALS} {printf("NOT-EQUAL ");}
 {IF} {printf("IF ");}
 {ELSE} {printf("ELSE ");}
-{SOP} {printf("SOP{%s} ", yytext);}
-{EOP} {printf("EOP{%s} ", yytext);}
+{SOP} {printf("SOP ");}
+{EOP} {printf("EOP ");}
+
+
 
 
 
