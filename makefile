@@ -1,11 +1,14 @@
-default: clean myprog test
+default:  korlang test
 
-myprog: myprog.l
-	lex myprog.l
-	gcc -o myprog lex.yy.c -ll
+korlang: korlang.l
+	lex korlang.l
+	gcc -o build/korlang lex.yy.c -ll
 
 clean:
-	rm myprog lex.yy.c
+	rm korlang lex.yy.c
 
-test:
-	cat example.mrt | ./myprog
+test: variable_test
+	
+variable_test:
+	echo "\nVariable Tests"
+	cat test/variables.kor | ./build/korlang
