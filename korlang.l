@@ -6,7 +6,7 @@ STRING ["][^\n\r]*["]
 /* BASIC KEYWORDS */
 ASSIGN =
 SEMICOLON ;
-VARIABLE [a-zA-Z][a-zA-Z0-9]*_*[a-zA-Z0-9]*
+VARIABLE [a-zA-Z][a-zA-Z0-9_]*
 TYPE int|float|string|bool
 /* LOGICAL OPERATORS */
 AND &&
@@ -19,9 +19,13 @@ EQUALS ==
 NEQUALS !=
 IF if
 ELSE else
+/* PARANTHESES */
 SOP \(
 EOP \)
-
+SOB \[
+EOB \]
+SOCB \{
+EOCB \}
 
 
 /*IGNORED*/
@@ -47,6 +51,10 @@ IGNORED [ \n\r]+
 {ELSE} {printf("ELSE ");}
 {SOP} {printf("SOP ");}
 {EOP} {printf("EOP ");}
+{SOB} {printf("SOB ");}
+{EOB} {printf("EOB ");}
+{SOCB} {printf("SOCB ");}
+{EOCB} {printf("EOCB ");}
 
 
 
