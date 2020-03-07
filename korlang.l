@@ -6,7 +6,7 @@ STRING ["][^\n\r]*["]
 /* BASIC KEYWORDS */
 ASSIGN =
 SEMICOLON ;
-VARIABLE [a-zA-Z][a-zA-Z0-9]*
+VARIABLE [a-zA-Z][a-zA-Z0-9]*_*[a-zA-Z0-9]*
 TYPE int|float|string|bool
 /* LOGICAL OPERATORS */
 AND &&
