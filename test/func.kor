@@ -1,0 +1,11 @@
+func sum(a,b) {
+    return a + b;
+}
+
+var mult = func(a,b){
+    return a*b;
+}
+
+
+mult(15,24);
+sum(15,24);

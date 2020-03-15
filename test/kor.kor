@@ -1,0 +1,17 @@
+var external = "ext";
+
+kor {
+    var internal= "not "+ external; 
+    exract internal
+}
+
+print(external);
+print(internal);
+
+
+var ext2 = "external var for inline kor";
+
+kor ext2;
+
+print(ext2);
+

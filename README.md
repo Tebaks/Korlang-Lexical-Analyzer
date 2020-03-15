@@ -11,15 +11,15 @@ Korlang is a memory first dynamic language. It is easy to implement but with ext
 ## Syntax
 ### Variables
 ```go
-var a = 1
-var b = "korlang"
-var c = true
-const d = 1
+var a = 1;
+var b = "korlang";
+var c = true;
+const d = 1;
 ```
 ### Loops
 ```go
 for a range ["1",2,true]{
-    print(a)
+    print(a);
 }
 
 for{
@@ -32,20 +32,19 @@ for code == true{
 ### Functions
 ```go
 func messanger (message,from){
-    print("you got message: " + message +"\nfrom: "+from )
-
+    print("you got message: " + message +"\nfrom: "+from );
 }
 
 func sum(x,y){
-    return x+y
+    return x+y;
 }
 
-messanger("hi","korlang")
+messanger("hi","korlang");
 /*
 you got message: hi
 from: korlang
 */
-sum(1+2)
+sum(1+2);
 //3
 ```
 
@@ -55,35 +54,35 @@ It has "kor{}" statement lets you conserve variables in curly brackets.
 
 ```go
 kor{
-var x = 5
-var y = 10
+var x = 5;
+var y = 10;
 
-var z = x+y
-extract z
+var z = x+y;
+extract z;
 }
 
-print(z) // result 15
+print(z); // result 15
 
-print(x) // Variable not found.
-print(y) // Variable not found.
+print(x); // Variable not found.
+print(y); // Variable not found.
  ```
 
  "kor" statement can be used for deleting external scope objects
 
  ```go
- var externalVar = "Hello"
+ var externalVar = "Hello";
  kor externalVar //can be used inline syntax
 
- var anotherExternalVar = "Hi, again"
+ var anotherExternalVar = "Hi, again";
  kor {
-     anotherExternalVar
-     var internalVar = "Hi, from kor"
-     extract internalVar
+     anotherExternalVar;
+     var internalVar = "Hi, from kor";
+     extract internalVar;
  }
 
- print(externalVar) // Variable Not Found!!
- print(anotherExternalVar) // Variable Not Found!!
- print(internalVar) // Result: Hi, from kor
+ print(externalVar); // Variable Not Found!!
+ print(anotherExternalVar); // Variable Not Found!!
+ print(internalVar); // Result: Hi, from kor
 
 
  ```

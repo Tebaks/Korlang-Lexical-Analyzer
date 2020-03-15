@@ -1,0 +1,15 @@
+for {
+    print("infinite loop");
+}
+
+
+for i in range(0,5) {
+    print(i);
+}
+
+var isAwesome = true;
+
+for isAwesome {
+    print("It's awesome");
+}
+

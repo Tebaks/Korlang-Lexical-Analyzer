@@ -27,7 +27,7 @@ SOCB \{
 EOCB \}
 
 /*KEYWORDS*/
-KEYWORD kor|func|return|if|else|for|struct
+KEYWORD kor|func|return|if|else|for|struct|range
 
 
 /*IGNORED*/
