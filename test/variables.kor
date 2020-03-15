@@ -1,25 +1,25 @@
-float variablName;
-int varName;
-int var2;
-int v2r;
-int var_name;
+var variablName;
+var varName;
+var var2;
+var v2r;
+var var_name;
 
 
-float var1 = 2.53;
-float var2 = 1;
+var var1 = 2.53;
+var var2 = 1;
 
-float var3 = .53;
-float var4 = 1f;
-float var5 = 1.24f;
+var var3 = .53;
+var var4 = 1f;
+var var5 = 1.24f;
 
-int i = 5;
-int j = 53;
+var i = 5;
+var j = 53;
 
-bool hasCorona = true;
-bool hasCorona = false;
+var hasCorona = true;
+var hasCorona = false;
 
-string str1 = "Merhabalar efendim.";
-string str2 = "nailsiniz iyisiniz" + "insallah";
-string str3 = "Ahmetin 3  elmasi var";
+var str1 = "Merhabalar efendim.";
+var str2 = "nailsiniz iyisiniz" + "insallah";
+var str3 = "Ahmetin 3  elmasi var";
 
 11Synt4x 3rr0R
