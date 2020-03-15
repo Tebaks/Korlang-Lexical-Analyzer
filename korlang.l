@@ -7,7 +7,7 @@ STRING ["][^\n\r]*["]
 ASSIGN =
 SEMICOLON ;
 VARIABLE [a-zA-Z][a-zA-Z0-9_]*
-TYPE int|float|string|bool
+TYPE var|const
 /* LOGICAL OPERATORS */
 AND &&
 OR \|\|
@@ -17,8 +17,7 @@ GTHEQ >=
 LTHEQ <=
 EQUALS ==
 NEQUALS !=
-IF if
-ELSE else
+
 /* PARANTHESES */
 SOP \(
 EOP \)
@@ -26,6 +25,9 @@ SOB \[
 EOB \]
 SOCB \{
 EOCB \}
+
+/*KEYWORDS*/
+KEYWORD kor|func|return|if|else|for|struct
 
 
 /*IGNORED*/
@@ -38,6 +40,7 @@ IGNORED [ \n\r]+
 {INT} { printf("INT{%s} ", yytext ); }
 {BOOLEAN} { printf("BOOLEAN{%s} ", yytext ); }
 {STRING} { printf("STRING{%s} ", yytext ); }
+{KEYWORD} {printf("KEYWORD{%s} ",yytext);}
 
 {AND} {printf("AND ");}
 {OR} {printf("OR ");}
@@ -47,16 +50,13 @@ IGNORED [ \n\r]+
 {LTHEQ} {printf("LESS-OR-EQUAL-THAN ");}
 {EQUALS} {printf("EQUAL ");}
 {NEQUALS} {printf("NOT-EQUAL ");}
-{IF} {printf("IF ");}
-{ELSE} {printf("ELSE ");}
+
 {SOP} {printf("SOP ");}
 {EOP} {printf("EOP ");}
 {SOB} {printf("SOB ");}
 {EOB} {printf("EOB ");}
 {SOCB} {printf("SOCB ");}
 {EOCB} {printf("EOCB ");}
-
-
 
 
 

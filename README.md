@@ -68,3 +68,23 @@ print(x) // Variable not found.
 print(y) // Variable not found.
  ```
 
+ "kor" statement can be used for deleting external scope objects
+
+ ```go
+ var externalVar = "Hello"
+ kor externalVar //can be used inline syntax
+
+ var anotherExternalVar = "Hi, again"
+ kor {
+     anotherExternalVar
+     var internalVar = "Hi, from kor"
+     extract internalVar
+ }
+
+ print(externalVar) // Variable Not Found!!
+ print(anotherExternalVar) // Variable Not Found!!
+ print(internalVar) // Result: Hi, from kor
+
+
+ ```
+
