@@ -2,8 +2,9 @@
 FLOAT [0-9]*\.[0-9]+f?|[0-9]+f
 INT [0-9]+
 BOOLEAN true|false
-STRING ["][^\n\r]*["]
+STRING ["][^"\n]*["]
 /* BASIC KEYWORDS */
+COMMENT [//]
 ASSIGN =
 SEMICOLON ;
 VARIABLE [a-zA-Z][a-zA-Z0-9_]*
@@ -59,7 +60,7 @@ IGNORED [ \n\r]+
 {EOCB} {printf("EOCB ");}
 
 
-
+{COMMENT} {printf("COMMENT ");}
 {ASSIGN} { printf("ASSIGN "); }
 {VARIABLE}  { printf("VARIABLE{%s} ", yytext ); }
 {IGNORED} {printf("%s",yytext);}

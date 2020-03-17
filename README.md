@@ -8,6 +8,7 @@ Kenan Abbak
 
 Korlang is a memory first dynamic language. It is easy to implement but with extra effort it allows you better memory management. It is easy to learn and easy to read. It has dynamic typing, types are associated with values not variables.
 
+
 ## Syntax
 ### Variables
 ```go
