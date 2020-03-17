@@ -19,6 +19,13 @@ LTHEQ <=
 EQUALS ==
 NEQUALS !=
 
+/* ARITHMETIC OPERATORS */
+SUM \+
+SUB -
+MUL \*
+DIV \/
+REM %
+
 /* PARANTHESES */
 SOP \(
 EOP \)
@@ -51,6 +58,12 @@ IGNORED [ \n\r]+
 {LTHEQ} {printf("LESS-OR-EQUAL-THAN ");}
 {EQUALS} {printf("EQUAL ");}
 {NEQUALS} {printf("NOT-EQUAL ");}
+
+{SUM} {printf("SUMMITION");}
+{SUB} {printf("SUBSTRACTION");}
+{MUL} {printf("MULTIPLICATION");}
+{DIV} {printf("DIVISION");}
+{REM} {printf("REMAINDER");}
 
 {SOP} {printf("SOP ");}
 {EOP} {printf("EOP ");}
