@@ -4,7 +4,7 @@ INT [0-9]+
 BOOLEAN true|false
 STRING ["][^"\n]*["]
 /* BASIC KEYWORDS */
-COMMENT [//]
+COMMENT \/\/
 ASSIGN =
 SEMICOLON ;
 VARIABLE [a-zA-Z][a-zA-Z0-9_]*
