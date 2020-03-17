@@ -1,0 +1,12 @@
+var sum = 5 + 5;
+var dif = 2.0 - 1.0;
+var div = 8 / 2;
+var mul = 3 * 5;
+var rem = 5 % 2;
+
+func specialSum(a,b){
+    return a + b;
+}
+
+specialSum(15 - 5, 5);
+specialSum(mul - div, rem);
