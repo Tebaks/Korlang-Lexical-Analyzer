@@ -1,3 +1,10 @@
+%{
+#include "y.tab.h"
+#include <string.h>
+void yyerror (char *s);
+
+int yylex();
+%}
 /* VARIABLES  */
 FLOAT [0-9]*\.[0-9]+f?|[0-9]+f
 INT [0-9]+
@@ -42,13 +49,13 @@ KEYWORD kor|func|return|if|else|for|struct|range
 IGNORED [ \n\r]+
 %%
 
-{SEMICOLON} { printf("SEMICOLON "); }
-{TYPE} { printf("TYPE{%s} ", yytext ); }
-{FLOAT} { printf("FLOAT{%s} ", yytext ); }
-{INT} { printf("INT{%s} ", yytext ); }
-{BOOLEAN} { printf("BOOLEAN{%s} ", yytext ); }
-{STRING} { printf("STRING{%s} ", yytext ); }
-{KEYWORD} {printf("KEYWORD{%s} ",yytext);}
+{SEMICOLON} {return ";" }
+{TYPE} { yyval.id = yytext; return type; }
+{FLOAT} { yyval.fval = atof(yytext);return float; }
+{INT} {yyval.fval = atoi(yytext);return integer; }
+{BOOLEAN} { if(strcmp(yytext,"true")==0){ yyval.ival = 1 }else{yyval.ival=0}  return boolean; }
+{STRING} { yval.id = yytext ; return string }
+KEYWORD {return yytext;}
 
 {AND} {printf("AND ");}
 {OR} {printf("OR ");}
@@ -59,21 +66,17 @@ IGNORED [ \n\r]+
 {EQUALS} {printf("EQUAL ");}
 {NEQUALS} {printf("NOT-EQUAL ");}
 
-{SUM} {printf("SUMMITION");}
-{SUB} {printf("SUBSTRACTION");}
-{MUL} {printf("MULTIPLICATION");}
-{DIV} {printf("DIVISION");}
-{REM} {printf("REMAINDER");}
+{SUM}|{SUB}|{MUL}|{DIV}|{REM} {return yytext;}
 
-{SOP} {printf("SOP ");}
-{EOP} {printf("EOP ");}
-{SOB} {printf("SOB ");}
-{EOB} {printf("EOB ");}
-{SOCB} {printf("SOCB ");}
-{EOCB} {printf("EOCB ");}
+{SOP} {return yytext;}
+{EOP} {return yytext;}
+{SOB} {return yytext;}
+{EOB} {return yytext;}
+{SOCB} {return yytext;}
+{EOCB} {return yytext;}
 
 
-{COMMENT} {printf("COMMENT ");}
+{COMMENT} {return comment}
 {ASSIGN} { printf("ASSIGN "); }
 {VARIABLE}  { printf("VARIABLE{%s} ", yytext ); }
 {IGNORED} {printf("%s",yytext);}
